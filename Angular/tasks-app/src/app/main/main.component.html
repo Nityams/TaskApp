@@ -1,0 +1,29 @@
+<div class="toolbar" role="banner">
+    <h1>Tasks Dashboard</h1>
+      <div class="spacer"></div>
+  </div>
+  <div class = "mainBody">
+        <mat-card style="margin:2em;"> 
+            <form ng-submit ="addToDo($event)">
+                <h3>Enter task:</h3>
+                <br>
+                <input #todoText matInput [(ngModel)]='todoTask' name='todoText' [value]='todoTask' (keyup.enter)='addToDo(todoTask)'>
+            </form>
+            <button mat-raised-button color="primary" (click)='addToDo(todoTask)' id='submit-addTask' type='submit' for='todoText'>Submit</button>
+        </mat-card>
+        <div *ngFor ="let task of tasks">
+            <mat-card class ="cardList">
+                    <tr>
+                        <td>
+                                <h4>{{task.content}}</h4>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                                <button mat-raised-button color="red" (click)="delete(task.id)" id="delete-task" type="button"> Completed </button>
+                        </td>
+                    </tr>
+            </mat-card>
+        </div>
+  </div>

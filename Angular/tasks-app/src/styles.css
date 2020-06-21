@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.toolbar{
+    background-color: burlywood;
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+}
+
+.toolbar h1{
+    margin-left: 2em;
+    color: #1976d2;
+}
